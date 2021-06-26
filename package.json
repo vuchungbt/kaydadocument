@@ -1,0 +1,28 @@
+{
+  "name": "kaydadocument",
+  "version": "1.0.0",
+  "description": "list document project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuchungbt/kadaydocument.git"
+  },
+  "author": "kaydateam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuchungbt/kadaydocument/issues"
+  },
+  "homepage": "https://github.com/vuchungbt/kadaydocument#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.15"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+logs
+*.log
+build/Release
+.npm
+.cache
+.cache/
