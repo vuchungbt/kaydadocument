@@ -4,7 +4,6 @@ const config = require('config');
 const mongo = require('./config/mongo');
 var cors = require('cors');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -15,26 +14,30 @@ app.set('views', './views'); // html client side from views folder
 
 const server = require("http").Server(app);
 
-app.use(
-    bodyParser.urlencoded({
-        extended: true,
-    }),
-);
-app.use(bodyParser.json());
 app.use(cookieParser(config.get('jwtSecret')));
 
-server.listen(8181, () => console.log('Project manager-Started on port 8181...'));
+server.listen(8182, () => console.log('Project manager-Started on port 8182...'));
 
 app.use(express.json());
+app.use(express.urlencoded({
+        extended: true
+    }),
+);
 app.use(cors());
 
 mongo.connect();
 
 app.get('/', function(req, res) {
-    res.render("home.ejs");
+    res.render("home");
+});
+app.get('/login', function(req, res) {
+    res.render("login");
+});
+app.get('/register', function(req, res) {
+    res.render("register");
 });
 app.get('/preview', function(req, res) {
-    res.render("preview.ejs");
+    res.render("preview");
 });
 
 
