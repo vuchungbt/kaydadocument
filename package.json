@@ -2,15 +2,18 @@
   "name": "kaydadocument",
   "version": "1.0.0",
   "description": "list document project",
+  "private": true,
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=dev nodemon node server.js",
+    "start:prod": "webpack --config webpack.production.config.js -p & cross-env NODE_ENV=production node app.js",
+    "test": "mocha-webpack --webpack-config webpack.config-test.js \"test/**/*.test.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vuchungbt/kadaydocument.git"
   },
-  "author": "kaydateam",
+  "author": "vuchungbt",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vuchungbt/kadaydocument/issues"
@@ -19,11 +22,18 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "config": "^3.3.6",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.4.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
     "forever-monitor": "^3.0.3",
-    "mongoose": "^5.12.15"
+    "mongoose": "^5.13.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1"
   }
 }
