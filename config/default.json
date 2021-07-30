@@ -1,6 +1,7 @@
 {
     "mongoURI": "mongodb://localhost:27017/kaydadocument",
     "jwtSecret": "secret kaydateam documentproject",
+    "jwtKeyReset": "secret kaydateam documentproject reset keyyyy",
     "gmail": "noreply.kaydateam@gmail.com",
     "pass": "090512147963q!@#",
     "text": "Code reset password: ",

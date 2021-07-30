@@ -12,7 +12,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 
 const app = express();
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 let isDev = process.env.NODE_ENV !== 'production';
 app.locals.env = process.env.NODE_ENV || 'dev';
@@ -52,13 +52,14 @@ app.use(passport.session());
 app.use(flash());
 
 //------------ Global variables ------------//
-app.use(function(req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.warning_msg = req.flash('warning_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    next();
-  });
+
+
+// catch 404 and forward to error handler
+    app.use(function (req, res, next) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+      });
   
 
 const home = require('./routes/index');
